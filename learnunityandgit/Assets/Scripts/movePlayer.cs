@@ -26,6 +26,9 @@ public class movePlayer : MonoBehaviour {
 		else if (Input.GetKey ("left")) { //when clicking the left button in keyboard 
 			newX = -speed;
 		}
+		else if (Input.GetKey ("up")) { //when clicking the up button in keyboard 
+			newY = speed;
+		}
 		reg.AddForce (new Vector2 (newX, newY));
 	}
 }
