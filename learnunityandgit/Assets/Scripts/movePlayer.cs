@@ -37,32 +37,39 @@ public class movePlayer : MonoBehaviour {
 		var newY = 0f;
 		if (Input.GetKey ("right")) { //when clicking the right button in keyboard 
 			//maximum speed for x is 2 if above do not increase the speed 
-				if (forceX < MaxVelocity.x) {
-					newX = standing ? speed : speed * speedSlow; //if the player standing move in normal speed and if it is already moving reduce it is speed 
-					animvar.SetInteger ("AnimTrans", 1);
-				} 
-				else 
-					animvar.SetInteger ("AnimTrans", 0);
+			if (forceX < MaxVelocity.x) {
+				newX = standing ? speed : speed * speedSlow; //if the player standing move in normal speed and if it is already moving reduce it is speed 
+				animvar.SetInteger ("AnimTrans", 1);
+			} else 
+			animvar.SetInteger ("AnimTrans", 0);
 			
-			transform.localScale = new Vector3 (1, 1, 1);
+				transform.localScale = new Vector3 (1, 1, 1);
+
 		}
 		else if (Input.GetKey ("left")) { //when clicking the left button in keyboard 
 			//maximum speed for x is 2 if above do not increase the speed 
-				if(forceX<MaxVelocity.x){
-				newX = standing? -speed:-speed*speedSlow; //if the player standing move in normal speed and if it is already moving reduce it is speed 
+			if (forceX < MaxVelocity.x) {
+				newX = standing ? -speed : -speed * speedSlow; //if the player standing move in normal speed and if it is already moving reduce it is speed 
 				animvar.SetInteger ("AnimTrans", 1);
 			} 
 			else 
 				animvar.SetInteger ("AnimTrans", 0);
-			
 			transform.localScale = new Vector3 (-1, 1, 1);
+
 		}
 		else if (Input.GetKey ("up")) { //when clicking the up button in keyboard 
 			//maximum speed for y is 3 if above do not increase the speed
-			if(forceY<MaxVelocity.y)
+			if(forceY<MaxVelocity.y){
+
 			newY = speed;
+			animvar.SetInteger ("AnimTrans", 2);
+			} 
+			else 
+			animvar.SetInteger ("AnimTrans", 0);
+		
 			transform.localScale = new Vector3 (1, 1, 1);
 		}
 		reg.AddForce (new Vector2 (newX, newY));
 	}
+
 }
