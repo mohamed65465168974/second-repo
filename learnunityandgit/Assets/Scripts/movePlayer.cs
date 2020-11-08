@@ -22,11 +22,11 @@ public class movePlayer : MonoBehaviour {
 		var newY = 0f;
 		if (Input.GetKey ("right")) { //when clicking the right button in keyboard 
 			newX = speed;
-			transform.localscale = new Vector3 (1, 1, 1);
+			transform.localScale = new Vector3 (1, 1, 1);
 		}
 		else if (Input.GetKey ("left")) { //when clicking the left button in keyboard 
 			newX = -speed;
-			transform.localscale = new Vector3 (-1, 1, 1);
+			transform.localScale = new Vector3 (-1, 1, 1);
 		}
 		else if (Input.GetKey ("up")) { //when clicking the up button in keyboard 
 			newY = speed;
